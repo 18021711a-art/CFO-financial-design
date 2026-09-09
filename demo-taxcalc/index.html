@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Автономный налоговый калькулятор для сравнения режимов налогообложения по годам.">
+  <title>Налоговый калькулятор</title>
+  <link rel="stylesheet" href="assets/styles.css">
+<style id="demo-readonly-style">
+  body.demo-readonly .hero-actions .button:not(.telegram) { display: none !important; }
+  body.demo-readonly .company-name-field input,
+  body.demo-readonly #calculatorForm input,
+  body.demo-readonly #calculatorForm select,
+  body.demo-readonly #calculatorForm textarea,
+  body.demo-readonly #yearSelect { pointer-events: none !important; user-select: none !important; }
+  body.demo-readonly .demo-purchase-bar { position: sticky; bottom: 0; z-index: 20; display: flex; justify-content: center; padding: 12px; background: rgba(255,255,255,.96); border-top: 1px solid #dfe4ec; box-shadow: 0 -8px 20px rgba(20,20,20,.08); }
+  body.demo-readonly .demo-purchase-bar a { display: inline-flex; align-items: center; justify-content: center; min-width: 220px; padding: 11px 18px; border-radius: 10px; background: #17213a; color: #fff; font-weight: 800; text-decoration: none; }
+</style>
+<script>
+  document.documentElement.classList.add('demo-readonly');
+  function lockDemoFields() {
+    document.querySelectorAll('input, select, textarea').forEach(function (el) {
+      el.disabled = true;
+      el.setAttribute('aria-disabled', 'true');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.body.classList.add('demo-readonly');
+    lockDemoFields();
+    new MutationObserver(lockDemoFields).observe(document.body, { childList: true, subtree: true });
+  });
+</script>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-brand">
+        <div class="fd-monogram" aria-label="Финансовый дизайн">ФД</div>
+        <div class="hero-copy">
+          <h1>Налоговый калькулятор</h1>
+          <p class="lead">Сравнение ОСНО, УСН, патента и АвтоУСН · обычный бизнес и маркетплейсы</p>
+          <div class="brandbar" aria-hidden="true"></div>
+          <label class="company-name-field" for="companyName">
+            <span>Название компании</span>
+            <input id="companyName" name="companyName" type="text" maxlength="120" autocomplete="organization" placeholder="Введите название компании">
+          </label>
+        </div>
+      </div>
+      <div class="actions hero-actions">
+        <button class="button instruction" id="instructionButton" type="button">Как заполнить</button>
+        <button class="button download" id="downloadButton" type="button">Скачать копию с данными</button>
+        <button class="button excel" id="excelButton" type="button">Выгрузка в Excel</button>
+        <button class="button" id="printButton" type="button">Печать / PDF</button>
+        <button class="button secondary" id="resetButton" type="button">Сбросить</button>
+        <a class="button telegram" href="https://t.me/lyubov1711" target="_blank" rel="noreferrer">Финансовый директор</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toolbar" aria-label="Выбор модели">
+    <div class="shell toolbar-row">
+      <div class="model-controls">
+        <div class="tabs">
+          <button class="tab is-active" type="button" data-model="base">Базовый бизнес</button>
+          <button class="tab" type="button" data-model="marketplace">Маркетплейсы</button>
+        </div>
+        <label class="year-picker" for="yearSelect"><span>Год</span><select id="yearSelect" aria-label="Год законодательства"></select></label>
+      </div>
+    </div>
+  </nav>
+
+  <main class="shell">
+    <div class="notice"><strong>Важно:</strong> это расчетная модель, а не налоговая консультация. Допустимость режима зависит от региона, ОКВЭД, состава операций, документов и специальных ограничений.</div>
+    <div class="layout">
+      <section class="panel form-panel">
+        <div class="panel-head">
+          <h2 id="formTitle">Исходные данные</h2>
+          <p>Голубые поля можно менять. Значения сохраняются в браузере.</p>
+        </div>
+        <form id="calculatorForm" class="form-body" autocomplete="off"></form>
+      </section>
+
+      <section class="panel result-panel">
+        <div class="panel-head">
+          <h2>Сравнение режимов</h2>
+          <p>Лучший режим выбирается только среди строк со статусом «ОК».</p>
+        </div>
+        <div class="summary">
+          <div class="best" id="bestSummary"></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>режим</th><th>статус</th><th>чистая прибыль</th><th>налоги</th><th>нагрузка</th></tr></thead>
+              <tbody id="resultsBody"></tbody>
+            </table>
+          </div>
+          <div class="details" id="details"></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel sources">
+      <h2>Параметры и источники</h2>
+      <p id="sourcesNote"></p>
+      <div class="rules-snapshot" id="rulesSnapshot"></div>
+      <ul id="sourcesList"></ul>
+    </section>
+  </main>
+
+  <dialog class="instruction-dialog" id="instructionDialog" aria-labelledby="instructionTitle">
+    <div class="dialog-head"><div><p class="eyebrow">пошаговая инструкция</p><h2 id="instructionTitle">Как заполнить налоговый калькулятор</h2></div><button class="dialog-close" id="instructionClose" type="button" aria-label="Закрыть">×</button></div>
+    <div class="dialog-body">
+      <ol>
+        <li><strong>Выберите модель и год.</strong> «Базовый бизнес» подходит для обычных продаж, «Маркетплейсы» — для Wildberries, Ozon, Яндекс Маркета и других площадок. Год определяет ставки и лимиты законодательства.</li>
+        <li><strong>Заполните профиль.</strong> Укажите ИП или ООО, количество сотрудников, фактические региональные ставки УСН и параметры дивидендов. Галочку «Сфера деятельности подпадает под льготу по НДС» отмечайте только при наличии законного основания для освобождения ваших операций от НДС. Сценарий НДС 5% остается доступным для компании, которая уже применяет эту ставку; калькулятор исключит его только при превышении верхнего лимита.</li>
+        <li><strong>Введите выручку.</strong> В базовом бизнесе укажите выручку с НДС. Для маркетплейсов внесите выручку до скидок, скидки/баллы и проценты услуг. Суммы под процентами рассчитываются автоматически.</li>
+        <li><strong>Заполните команду и остальные расходы.</strong> Суммы вводятся за один и тот же период. В комментарии к операционным расходам можно расшифровать аренду, ПО, консультации и другие статьи.</li>
+        <li><strong>Настройте себестоимость.</strong> Укажите общий процент себестоимости от выручки с НДС. Затем распределите 100% себестоимости между ставками входного НДС. Например: себестоимость 32% от выручки с НДС; 70% закупок с НДС 22%, 20% с НДС 10%, 10% без НДС.</li>
+        <li><strong>Проверьте распределение.</strong> Калькулятор показывает сумму по каждой доле. Зеленая отметка означает, что доли составляют ровно 100%; при другой сумме появится предупреждение.</li>
+        <li><strong>Сравните режимы.</strong> В таблице участвуют только допустимые сценарии со статусом «ОК». Сценарий «ОСНО — льгота по НДС» требует подтверждения льготы. При нулевых данных после сброса сценарии НДС 5%, 7% и 22% остаются доступными; ограничения проверяются после ввода выручки. Нажмите строку режима, чтобы увидеть налоговую базу, принимаемые расходы, НДС и другие детали.</li>
+        <li><strong>Сохраните результат.</strong> «Печать / PDF» формирует вертикальную печатную форму с исходными данными и результатами. «Скачать копию с данными» сохраняет локальную HTML-копию текущего расчета. «Выгрузка в Excel» создает файл XLSX с исходными данными и сравнением налоговых режимов.</li>
+      </ol>
+      <div class="dialog-note"><strong>Важно:</strong> используйте значения за одинаковый период и подтвержденные документами суммы. Калькулятор помогает сравнить сценарии, но не заменяет проверку конкретной ситуации бухгалтером или налоговым консультантом.</div>
+    </div>
+  </dialog>
+
+  <footer class="footer"><div class="shell footer-row"><span>Версия 1.1 · данные не покидают устройство · <span id="verificationNote"></span></span><span class="copyright">© 2026. Налоговый калькулятор. Все права защищены.</span></div></footer>
+  <script src="assets/js/tax-rules.js"></script>
+  <script src="assets/js/calc.js"></script>
+  <script src="assets/vendor/xlsx.full.min.js"></script>
+  <script src="assets/js/excel-export.js"></script>
+  <script src="assets/js/app.js"></script>
+<div class="demo-purchase-bar"><a href="https://t.me/lyubov1711?text=Здравствуйте!%20Хочу%20купить%20налоговый%20калькулятор" target="_blank" rel="noopener">Купить налоговый калькулятор</a></div>
+</body>
+</html>
