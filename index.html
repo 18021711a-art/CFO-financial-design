@@ -51,17 +51,18 @@
             </div>
             
             <!-- Ссылки меню -->
-            <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <div class="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium text-slate-600">
                 <a href="#expert" class="hover:text-blue-600 transition-colors">Об авторе</a>
                 <a href="#tools" class="hover:text-blue-600 transition-colors">Инструменты</a>
                 <a href="#calculator" class="hover:text-pink-600 transition-colors">Калькулятор ROI</a>
+                <a href="#cases" class="hover:text-blue-600 transition-colors">Кейсы</a>
                 <a href="#services" class="hover:text-pink-600 transition-colors">Услуги</a>
-                <a href="#tariffs" class="hover:text-blue-600 transition-colors">Тарифы</a>
+                <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a>
             </div>
 
-            <div class="flex items-center gap-4 sm:gap-6">
+            <div class="flex items-center gap-3 sm:gap-4">
                 <!-- Кликабельный номер телефона -->
-                <a href="tel:+79068675807" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors flex items-center gap-2">
+                <a href="tel:+79068675807" class="text-xs sm:text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors flex items-center gap-2 whitespace-nowrap">
                     <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     <span class="hidden sm:inline">+7-906-86-75-807</span>
                 </a>
@@ -78,10 +79,10 @@
         <section class="max-w-6xl mx-auto px-4 pt-6 pb-3 md:pt-8 md:pb-6">
             <div class="text-center max-w-6xl mx-auto">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-3 tracking-tight leading-tight mt-0">
-                    Финансовый директор на аутсорсе
+                    Финансовый директор <span class="block text-lg md:text-2xl font-semibold text-slate-600 tracking-normal mt-2">на аутсорсе для малого и среднего бизнеса</span>
                 </h1>
                 <p class="text-lg md:text-xl text-slate-600 mb-0 max-w-3xl mx-auto leading-relaxed">
-                    Наведем порядок в цифрах, найдем потерянную прибыль и внедрим систему, чтобы вы могли <span class="font-bold text-slate-800">безопасно выводить дивиденды</span>.
+                    Спокойствие собственника - прозрачный управленческий учет, точные цифры, выверенные управленческие решения.
                 </p>
 </div>
         </section>
@@ -104,7 +105,7 @@
                             </div>
                             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Любовь Боброва</h2>
                             <div class="space-y-3 text-slate-600 text-sm md:text-base leading-relaxed">
-                                <p>Я финансовый директор со стажем работы более 16 лет, специализируюсь в направлениях: <span class="font-semibold text-slate-800">селлеры на маркетплейсах, оптовая торговля, ВЭД, транспорт и логистика, производство, рестораны</span>.</p>
+                                <p>Я финансовый директор со стажем работы более 16 лет, специализируюсь в направлениях: <span class="font-semibold text-slate-800"><a href="seller-dashboard.html" class="text-blue-700 underline decoration-blue-300 underline-offset-4 hover:text-pink-600">селлеры на маркетплейсах</a>, оптовая торговля, ВЭД, транспорт и логистика, производство, рестораны</span>.</p>
                                 
                                 <p>За годы практики я видела десятки компаний с хорошей выручкой, которые при этом постоянно сталкивались с нехваткой денег. Я помогала выравнивать денежный поток, находить причины кассовых разрывов и оптимизировать расходы без ущерба для эффективности компании, а также настраивала точный расчет себестоимости мультивалютных товаров со сложной логистикой.</p>
 
@@ -217,7 +218,7 @@
         <section id="calculator" class="py-16 md:py-24 relative z-20">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="text-center mb-12">
-                    <div class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 font-semibold text-sm mb-4">Калькулятор окупаемости</div>
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600 to-pink-500 text-white font-bold text-sm mb-4 shadow-sm">Калькулятор окупаемости</div>
                     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Окупаемость финдира и <br>управленческого учета</h2>
                     <p class="text-lg text-slate-600 max-w-2xl mx-auto">Передвигайте ползунки, чтобы увидеть, как быстро окупаются инвестиции во внедрение системы учета.</p>
                 </div>
@@ -264,9 +265,10 @@
                     <!-- Тарифы ROI (Правая часть) -->
                     <div class="lg:col-span-5 flex flex-col gap-6">
                         <div class="glass-card rounded-3xl p-6 border-l-4 border-emerald-400">
-                            <div class="inline-block px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 font-bold text-xs uppercase mb-3 border border-emerald-100">Тариф 1: Проект</div>
+                            <div class="inline-block px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 font-bold text-xs uppercase mb-3 border border-emerald-100">Формат 1: проект</div>
                             <h3 class="text-xl font-bold text-slate-900 mb-2">Сборка учета</h3>
-                            <div class="mb-4 text-2xl font-bold text-slate-800" id="t1-price-val">300 000 ₽</div>
+                            <div class="text-2xl font-bold text-slate-800" id="t1-price-val">300 000 ₽</div>
+                            <div class="text-xs text-slate-400 mb-4">Среднерыночная стоимость</div>
                             <div class="bg-emerald-500 text-white p-4 rounded-xl shadow-md">
                                 <div class="text-sm opacity-90">Срок окупаемости системы:</div>
                                 <div class="text-2xl font-extrabold flex items-baseline gap-1"><span id="t1-roi">1.5</span> <span class="text-sm font-medium">мес.</span></div>
@@ -274,9 +276,10 @@
                         </div>
 
                         <div class="glass-card rounded-3xl p-6 border-l-4 border-pink-500">
-                            <div class="inline-block px-3 py-1 rounded-md bg-pink-50 text-pink-700 font-bold text-xs uppercase mb-3 border border-pink-100">Тариф 2: Партнерство</div>
+                            <div class="inline-block px-3 py-1 rounded-md bg-pink-50 text-pink-700 font-bold text-xs uppercase mb-3 border border-pink-100">Формат 2: партнерство</div>
                             <h3 class="text-xl font-bold text-slate-900 mb-2">Финдир на аутсорсе</h3>
-                            <div class="mb-4 text-2xl font-bold text-slate-800"><span id="t2-price-val">150 000 ₽</span> <span class="text-sm text-slate-500">/ мес</span></div>
+                            <div class="text-2xl font-bold text-slate-800"><span id="t2-price-val">150 000 ₽</span></div>
+                            <div class="text-xs text-slate-400 mb-4">Среднерыночная стоимость</div>
                             <div class="gradient-bg text-white p-4 rounded-xl shadow-lg">
                                 <div class="text-sm opacity-90">Ваша чистая выгода:</div>
                                 <div class="text-2xl font-extrabold flex items-baseline gap-1"><span id="t2-net-profit">+ 0 ₽</span> <span class="text-sm font-medium">/ мес</span></div>
@@ -288,11 +291,49 @@
             </div>
         </section>
 
-        <!-- Блок 4: Услуги -->
+        <!-- Блок 4: Кейсы -->
+        <section id="cases" class="py-12 md:py-16 relative z-20">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-8">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600 to-pink-500 text-white font-bold text-sm mb-3 shadow-sm">Кейсы</div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Что меняется после настройки учета</h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">Обезличенные примеры из рабочих материалов. Даты и показатели сохранены, внутренние названия компаний не используются.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <article class="bg-white rounded-3xl p-6 border border-blue-100 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between gap-3 mb-4"><span class="text-sm font-bold text-blue-700">Спецтехника, ремонт и аренда</span><span class="text-xs text-slate-400">старт: 23.12.2024</span></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Денежный поток под ежедневным контролем</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4"><b>Было:</b> банк загружали в учет, а прибыль считали кассовым методом. В сезонных провалах возникали кассовые разрывы, личные деньги смешивались с деньгами бизнеса. <b>Что сделали:</b> адаптировали платежный календарь под ежедневную работу, научили сотрудников планировать поступления и выплаты, ввели правило отсрочки на 3 дня и раздельный учет денег собственника. <b>Результат:</b> собственник ежедневно видит план и принимает решения до возникновения дефицита.</p>
+                        <div class="grid grid-cols-2 gap-3 text-sm"><div class="rounded-2xl bg-blue-50 p-3"><b class="block text-slate-900">107%</b><span class="text-slate-500">точность поступлений</span></div><div class="rounded-2xl bg-blue-50 p-3"><b class="block text-slate-900">106%</b><span class="text-slate-500">точность выплат</span></div><div class="rounded-2xl bg-blue-50 p-3"><b class="block text-slate-900">в 11 раз</b><span class="text-slate-500">рост наличных</span></div><div class="rounded-2xl bg-blue-50 p-3"><b class="block text-slate-900">в 8 раз</b><span class="text-slate-500">сальдо операционной деятельности</span></div></div>
+                    </article>
+                    <article class="bg-white rounded-3xl p-6 border border-purple-100 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between gap-3 mb-4"><span class="text-sm font-bold text-purple-700">Оптовая торговля электрооборудованием</span><span class="text-xs text-slate-400">результаты: 2025</span></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Запасы перестали замораживать деньги</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4"><b>Было:</b> при выручке 28,5 млн ₽ в месяц в запасах находилось 98,5 млн ₽, включая неликвиды. Оборачиваемость составляла 137 дней, кредитная нагрузка создавала кассовые разрывы, а компания работала в убыток. <b>Что сделали:</b> разделили запасы по востребованности, вывели два бренда в неликвиды, пересчитали партии импорта, внедрили платежный календарь и финансовую модель. <b>Результат:</b> компания закрыла кредит 8 млн ₽ и овердрафт 7 млн ₽, а решения по закупкам и продажам стали опираться на цифры.</p>
+                        <div class="grid grid-cols-2 gap-3 text-sm"><div class="rounded-2xl bg-purple-50 p-3"><b class="block text-slate-900">с 137 до 78 дней</b><span class="text-slate-500">оборачиваемость запасов</span></div><div class="rounded-2xl bg-purple-50 p-3"><b class="block text-slate-900">-31%</b><span class="text-slate-500">проценты по кредитам</span></div><div class="rounded-2xl bg-purple-50 p-3"><b class="block text-slate-900">-60%</b><span class="text-slate-500">выплаты тела кредитов</span></div><div class="rounded-2xl bg-purple-50 p-3"><b class="block text-slate-900">×1,9</b><span class="text-slate-500">рост выручки</span></div></div>
+                    </article>
+                    <article class="bg-white rounded-3xl p-6 border border-pink-100 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between gap-3 mb-4"><span class="text-sm font-bold text-pink-700">Группа ресторанов</span><span class="text-xs text-slate-400">материалы: 2024</span></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Закупки и кухня стали управляемыми</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4"><b>Было:</b> пять залов работали с отдельными кухнями, два закупщика распределяли заказы вручную, часть позиций терялась, а одно блюдо готовили по-разному. <b>Что сделали:</b> объединили кухни в единое заготовительное производство, закрепили одного материально ответственного, ввели единый стандарт заготовок и перевели закупки с наличных на документально подтвержденный безналичный расчет. <b>Результат:</b> собственник получил единый контроль сырья, цен, документов и качества блюд.</p>
+                        <div class="grid grid-cols-2 gap-3 text-sm"><div class="rounded-2xl bg-pink-50 p-3"><b class="block text-slate-900">-40%</b><span class="text-slate-500">излишки и недостачи за год</span></div><div class="rounded-2xl bg-pink-50 p-3"><b class="block text-slate-900">с двух до одного</b><span class="text-slate-500">закупщика</span></div><div class="rounded-2xl bg-pink-50 p-3"><b class="block text-slate-900">80%</b><span class="text-slate-500">доставки поставщиками</span></div><div class="rounded-2xl bg-pink-50 p-3"><b class="block text-slate-900">100+</b><span class="text-slate-500">должностей в системе KPI</span></div></div>
+                    </article>
+                    <article class="bg-white rounded-3xl p-6 border border-emerald-100 shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between gap-3 mb-4"><span class="text-sm font-bold text-emerald-700">Импорт фруктов</span><span class="text-xs text-slate-400">материалы: 2024</span></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">ВЭД без задержек и штрафов</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4"><b>Было:</b> на таможенных счетах возникали перебои с деньгами, товар задерживали, отправляли на досмотры и начисляли штрафы. <b>Что сделали:</b> выстроили работу с банками, взяли в штат декларанта и закрепили структуру взаимодействия и контроля по ВЭД. <b>Результат:</b> таможенные платежи стали планируемыми, а поставки перестали зависеть от ручного поиска решений в последний момент.</p>
+                        <div class="grid grid-cols-3 gap-3 text-sm"><div class="rounded-2xl bg-emerald-50 p-3"><b class="block text-slate-900">0</b><span class="text-slate-500">штрафов за год</span></div><div class="rounded-2xl bg-emerald-50 p-3"><b class="block text-slate-900">1 день</b><span class="text-slate-500">растаможивание</span></div><div class="rounded-2xl bg-emerald-50 p-3"><b class="block text-slate-900">−3 раза</b><span class="text-slate-500">досмотры</span></div></div>
+                    </article>
+                </div>
+                <p class="text-xs text-slate-400 mt-5 text-center">Показатели приведены по материалам презентаций и не являются гарантией результата для другого бизнеса.</p>
+            </div>
+        </section>
+
+        <!-- Блок 5: Услуги -->
         <section id="services" class="py-12 md:py-16 relative z-20 bg-white">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-8">
-                    <div class="inline-block px-4 py-1.5 rounded-full bg-slate-900 text-white font-bold text-sm mb-3">Как работаем</div>
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600 to-pink-500 text-white font-bold text-sm mb-3 shadow-sm">Как работаем</div>
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">От цифр к управленческим решениям</h2>
                     <p class="text-lg text-slate-600 max-w-2xl mx-auto">Выстраиваем понятную систему, в которой каждый следующий шаг опирается на предыдущий.</p>
                 </div>
@@ -320,6 +361,20 @@
                         <a href="https://t.me/lyubov1711?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20дашборда" target="_blank" rel="noopener" class="group bg-white rounded-2xl p-5 border border-pink-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"><div class="text-2xl mb-3">🖥️</div><h3 class="font-bold text-slate-900 mb-2">Дашборд</h3><p class="text-sm text-slate-500 mb-4">Ключевые показатели на одном экране.</p></a>
                         <a href="https://t.me/lyubov1711?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20калькулятора%20себестоимости" target="_blank" rel="noopener" class="group bg-white rounded-2xl p-5 border border-orange-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"><div class="text-2xl mb-3">🧾</div><h3 class="font-bold text-slate-900 mb-2">Калькулятор себестоимости</h3><p class="text-sm text-slate-500 mb-4">Расчет полной себестоимости продукта, услуги или заказа.</p></a>
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- Блок 6: FAQ -->
+        <section id="faq" class="py-12 md:py-16 relative z-20 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-8"><div class="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600 to-pink-500 text-white font-bold text-sm mb-3 shadow-sm">FAQ</div><h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Частые вопросы</h2><p class="text-lg text-slate-600">Коротко о формате работы и результате.</p></div>
+                <div class="space-y-3">
+                    <details class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><summary class="font-bold text-slate-900 cursor-pointer">С какими компаниями вы работаете?</summary><p class="mt-3 text-slate-600">С малым и средним бизнесом, где собственнику нужны прозрачные цифры, точная прибыль и оборачиваемость запасов для уверенного принятия управленческих решений.</p></details>
+                    <details class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><summary class="font-bold text-slate-900 cursor-pointer">Можно ли начать с диагностики?</summary><p class="mt-3 text-slate-600">Да. Сначала определяем, какие данные уже есть, насколько они достоверны и какие первые шаги дадут быстрый управленческий эффект.</p></details>
+                    <details class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><summary class="font-bold text-slate-900 cursor-pointer">Что входит в управленческий учет?</summary><p class="mt-3 text-slate-600">Набор зависит от задачи бизнеса. Наиболее распространенные инструменты: ДДС (деньги приносит основная деятельность или кредиты?), ОПиУ (метод начислений), управленческий баланс (где деньги?), платежный календарь (средство от кассовых разрывов и дополнительный доход), план-факт (командная работа и прозрачное будущее), себестоимость (избавляемся от подводных камней), запасы (оборачиваемость), дебиторка и кредиторка (как можно экономить на кредитах?).</p></details>
+                    <details class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><summary class="font-bold text-slate-900 cursor-pointer">Работаете с маркетплейсами?</summary><p class="mt-3 text-slate-600">Да. Специфический учет дает собственнику ясность. В <a href="seller-dashboard.html" class="font-semibold text-blue-700 underline decoration-blue-300 underline-offset-4 hover:text-pink-600">демо-дашборде показана логика контроля</a> продаж, себестоимости, логистики, комиссий, рекламы и маржи, чтобы принимать верные управленческие решения.</p></details>
+                    <details class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><summary class="font-bold text-slate-900 cursor-pointer">Сколько времени занимает настройка?</summary><p class="mt-3 text-slate-600">Срок зависит от числа источников, качества данных и состава отчетности. После диагностики формируем дорожную карту с этапами и приоритетами.</p></details>
+                    <details class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm"><summary class="font-bold text-slate-900 cursor-pointer">Какие данные нужны на старте?</summary><p class="mt-3 text-slate-600">Точный список зависит от отрасли и цели проекта. На старте определяем, какие источники доступны, какие показатели нужно собрать и каких данных не хватает для надежных выводов.</p></details>
                 </div>
             </div>
         </section>
@@ -388,7 +443,7 @@
         const t2NetProfitEl = document.getElementById('t2-net-profit');
 
         t1PriceEl.innerText = formatMoney(T1_PRICE);
-        t2PriceEl.innerText = formatMoney(T2_PRICE) + ' / мес';
+        t2PriceEl.innerText = formatMoney(T2_PRICE);
 
         function formatMoney(num) { return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " ₽"; }
 
